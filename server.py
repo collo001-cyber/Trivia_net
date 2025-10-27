@@ -201,3 +201,15 @@ except KeyboardInterrupt:
 except Exception as e:
     print(f"❌ Error: {e}")
     sys.exit(1)
+import threading
+from http.server import SimpleHTTPRequestHandler, HTTPServer
+
+def run_http_healthcheck():
+    port = int(os.environ.get("PORT", 8000))
+    handler = SimpleHTTPRequestHandler
+    with HTTPServer(("0.0.0.0", port), handler) as httpd:
+        print(f"HTTP healthcheck running on port {port}")
+        httpd.serve_forever()
+
+# Start the HTTP server in a background thread
+threading.Thread(target=run_http_healthcheck, daemon=True).start()
