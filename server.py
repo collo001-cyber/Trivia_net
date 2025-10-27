@@ -1,4 +1,4 @@
-/import socket, threading, time, json
+import socket, threading, time, json
 from helper.network import send_json, recv_json
 from helper.messages import make_question, make_result, make_leaderboard, make_ready, make_finished
 from questions import get_questions
