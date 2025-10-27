@@ -189,8 +189,15 @@ def main():
 
 if __name__ == "__main__":
     try:
-        main()
-    except KeyboardInterrupt:
-        print("Shutting down.")
-        sys.exit(0)
+        import time
+import sys
+
+try:
+    while True:
+        main()  # run your main loop once
+        print("⚠️ No players connected. Waiting before retrying...")
+        time.sleep(5)  # wait 5 seconds and check again
+except KeyboardInterrupt:
+    print("🛑 Shutting down gracefully.")
+    sys.exit(0)
 
