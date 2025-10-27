@@ -194,10 +194,9 @@ import sys
 
 try:
     while True:
-        main()  # run your main loop once
+        main()
         print("⚠️ No players connected. Waiting before retrying...")
-        time.sleep(5)  # wait 5 seconds and check again
+        time.sleep(5)
 except KeyboardInterrupt:
     print("🛑 Shutting down gracefully.")
     sys.exit(0)
-
