@@ -1,0 +1,10 @@
+{
+  "host": "0.0.0.0",
+  "port": 7777,
+  "min_players": 2,
+  "max_wait_seconds_for_players": 45,
+  "questions_per_game": 5,
+  "seconds_per_question": 18,
+  "seconds_between_questions": 5,
+  "score_for_correct": 1
+}
