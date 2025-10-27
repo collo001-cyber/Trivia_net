@@ -188,8 +188,7 @@ def main():
         pass
 
 if __name__ == "__main__":
-    try:
-        import time
+    import time
 import sys
 
 try:
@@ -198,5 +197,7 @@ try:
         print("⚠️ No players connected. Waiting before retrying...")
         time.sleep(5)
 except KeyboardInterrupt:
-    print("🛑 Shutting down gracefully.")
-    sys.exit(0)
+    print("Server stopped manually.")
+except Exception as e:
+    print(f"❌ Error: {e}")
+    sys.exit(1)
