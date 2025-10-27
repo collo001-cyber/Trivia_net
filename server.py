@@ -1,4 +1,4 @@
-import socket, threading, time, json
+/import socket, threading, time, json
 from helper.network import send_json, recv_json
 from helper.messages import make_question, make_result, make_leaderboard, make_ready, make_finished
 from questions import get_questions
@@ -9,8 +9,8 @@ import json as _json
 with open("server_config.json", "r") as f:
     CFG = _json.load(f)
 
-HOST = CFG.get("host", "0.0.0.0")
-PORT = CFG.get("port", 7777)
+HOST = '0.0.0.0'
+PORT = int(os.environ.get("PORT", 10000))  # Use Render's assigned port or default
 MIN_PLAYERS = CFG.get("min_players", 2)
 JOIN_WAIT = CFG.get("max_wait_seconds_for_players", 30)
 Q_PER_GAME = CFG.get("questions_per_game", 5)
